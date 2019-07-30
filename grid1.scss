@@ -1,0 +1,90 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+}
+
+.container {
+    border: 1px dashed green;
+    max-width: 1000px;
+    padding: 0px 30px 100px 30px;
+    margin: auto;
+}
+
+.grid1 {
+    background-color: rgb(205, 205, 210);
+    border: 5px solid black;
+    height: 400px;
+    margin-bottom: 50px;
+
+    display: grid;
+    grid-template-columns: repeat(4, 25%);
+    // grid-template-rows: 25% 50% 25%;
+    grid-template-rows: 25% 25% 25% 25%;
+    grid-template-areas:
+        "header header header header"
+        "sidebar . main main"
+        "sidebar . main main"
+        "sidebar footer footer footer";
+    grid-gap: 10px;
+
+    .grid1-header {
+        background-color: red;
+        grid-area: header;
+    }
+    .grid1-sidebar {
+        background-color: green;
+        grid-area: sidebar;
+    }
+    .grid1-main {
+        background-color: blue;
+        grid-area: main;
+    }
+    .grid1-footer {
+        background-color: grey;
+        grid-area: footer;
+    }
+}
+
+
+.grid2 {
+    background-color: rgb(205, 205, 210);
+    border: 5px solid black;
+    height: 400px;
+    margin-bottom: 20px;
+
+    display: grid;
+    grid-template-columns: 25% 10% auto auto;
+    grid-template-rows: 25% 25% 25% 25%;
+    grid-template-areas:
+        "header header header header"
+        "sidebar . main main"
+        "sidebar . main main"
+        "sidebar footer footer footer";
+
+    justify-items: center;
+
+
+    .grid2-header {
+        background-color: red;
+        grid-area: header;
+        border: 3px dashed white;
+    }
+    .grid2-sidebar {
+        background-color: green;
+        grid-area: sidebar;
+        border: 3px dashed white;
+    }
+    .grid2-main {
+        background-color: blue;
+        grid-area: main;
+        border: 3px dashed white;
+    }
+    .grid2-footer {
+        background-color: grey;
+        grid-area: footer;
+        border: 3px dashed white;
+    }
+}
